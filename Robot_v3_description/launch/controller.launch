@@ -1,9 +1,0 @@
-<launch>
-
-<rosparam file="$(find Robot_v3_description)/launch/controller.yaml" command="load"/>
-<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="Robot_v3" args="RJ1_position_controller RJ2_position_controller RJ3_position_controller RJ4_position_controller RJ5_position_controller RJ6_position_controller RJ7_position_controller RJ8_position_controller LJ1_position_controller LJ2_position_controller LJ3_position_controller LJ4_position_controller LJ5_position_controller LJ6_position_controller LJ7_position_controller LJ8_position_controller joint_state_controller "/>
-<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
-  <remap from="/joint_states" to="/Robot_v3/joint_states"/>
-</node>
-
-</launch>
